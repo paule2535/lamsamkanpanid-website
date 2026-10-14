@@ -2,5 +2,6 @@
 # ไฟล์อื่นในโฟลเดอร์นี้ (หน้าทดลองเก่า, CSS ที่ก็อปจาก Figma) ไม่ต้องอัปโหลด
 /*
 !/.gitignore
+!/vercel.json
 !/lamsamkanpanid.html
 !/lamsamkanpanid/
