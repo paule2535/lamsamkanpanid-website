@@ -1,0 +1,6 @@
+# อัปโหลดขึ้น GitHub เฉพาะเว็บล่ำซำ
+# ไฟล์อื่นในโฟลเดอร์นี้ (หน้าทดลองเก่า, CSS ที่ก็อปจาก Figma) ไม่ต้องอัปโหลด
+/*
+!/.gitignore
+!/lamsamkanpanid.html
+!/lamsamkanpanid/

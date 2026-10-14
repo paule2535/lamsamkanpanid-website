@@ -1,0 +1,158 @@
+/* page5: Asphalt road construction (จาก Figma ไฟล์ page5.css + รูปหน้าจอ)
+   ทุกตัวขึ้นต้นด้วย .page5 จะได้ไม่ชนกับส่วนอื่น
+   ขนาดบนคอมใช้ --u จาก base.css */
+
+.page5 {
+  display: flex;
+  flex-direction: column;
+  gap: calc(40 * var(--u));
+  padding: calc(80 * var(--u)) calc(64 * var(--u)) calc(30 * var(--u));
+  background: var(--hero-bg);
+  color: var(--white);
+}
+
+.page5 .title {
+  font-size: calc(40 * var(--u));
+  font-weight: 700;
+  line-height: 140%;
+}
+
+/* รูปซ้าย + ขั้นตอนขวา */
+.page5 .body {
+  display: grid;
+  grid-template-columns: calc(506 * var(--u)) 1fr;
+  align-items: start;
+  gap: calc(48 * var(--u));
+}
+
+.page5 .photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.page5 .steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page5 .step {
+  display: grid;
+  grid-template-columns: calc(48 * var(--u)) 1fr;
+  padding: calc(18 * var(--u)) 0 calc(22 * var(--u));
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+/* ความสูงบรรทัดเท่าหัวข้อ เลขจะได้อยู่แนวเดียวกับหัวข้อ */
+.page5 .step-no {
+  font-size: max(11px, calc(12 * var(--u)));
+  line-height: calc(31 * var(--u));
+  color: var(--yellow);
+}
+
+.page5 .step-title {
+  font-size: calc(22 * var(--u));
+  font-weight: 700;
+  line-height: 140%;
+}
+
+.page5 .step-desc {
+  margin-top: calc(4 * var(--u));
+  font-size: max(13px, calc(14 * var(--u)));
+  line-height: 165%;
+  color: #C9CEC5;
+}
+
+/* แถวล่าง: เหมาะสำหรับ */
+.page5 .fit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: calc(10 * var(--u)) calc(30 * var(--u));
+  padding-top: calc(22 * var(--u));
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.page5 .fit-label {
+  font-size: max(12px, calc(13 * var(--u)));
+  line-height: 165%;
+  color: #9DA39A;
+}
+
+.page5 .fit-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(10 * var(--u)) calc(30 * var(--u));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: max(13px, calc(14 * var(--u)));
+  font-weight: 600;
+  line-height: 165%;
+}
+
+/* Tablet: ยังวางรูปคู่ขั้นตอน แต่ใช้ขนาดคงที่ */
+@media (max-width: 1023px) {
+  .page5 {
+    gap: 28px;
+    padding: 64px var(--gutter) 40px;
+  }
+
+  .page5 .title {
+    font-size: clamp(26px, 5vw, 36px);
+  }
+
+  .page5 .body {
+    grid-template-columns: 2fr 3fr;
+    gap: 32px;
+  }
+
+  .page5 .step {
+    grid-template-columns: 36px 1fr;
+    padding: 16px 0 18px;
+  }
+
+  .page5 .step-no {
+    line-height: 28px;
+  }
+
+  .page5 .step-title {
+    font-size: 20px;
+  }
+
+  .page5 .step-desc {
+    margin-top: 2px;
+  }
+
+  .page5 .fit,
+  .page5 .fit-list {
+    gap: 8px 22px;
+  }
+
+  .page5 .fit {
+    padding-top: 20px;
+  }
+}
+
+/* Mobile: รูปอยู่บน ขั้นตอนอยู่ล่าง */
+@media (max-width: 700px) {
+  .page5 {
+    padding: 48px var(--gutter) 36px;
+  }
+
+  .page5 .body {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .page5 .photo {
+    aspect-ratio: 4 / 3;
+    object-position: center 62%;
+  }
+
+  .page5 .step-title {
+    font-size: 18px;
+  }
+}

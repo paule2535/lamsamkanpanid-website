@@ -1,0 +1,190 @@
+/* page4: Machinery rental catalog (จาก Figma ไฟล์ page4.css + รูปหน้าจอ)
+   ทุกตัวขึ้นต้นด้วย .page4 จะได้ไม่ชนกับส่วนอื่น
+   ขนาดบนคอมใช้ --u จาก base.css */
+
+.page4 {
+  padding: calc(80 * var(--u)) calc(64 * var(--u));
+  background: var(--white);
+  color: var(--ink);
+}
+
+/* Section introduction */
+.page4 .intro {
+  display: flex;
+  align-items: flex-end;
+  gap: calc(64 * var(--u));
+}
+
+.page4 .intro-heading {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(12 * var(--u));
+}
+
+.page4 .label {
+  display: flex;
+  align-items: center;
+  gap: calc(10 * var(--u));
+  font-size: max(12px, calc(13 * var(--u)));
+  font-weight: 600;
+  line-height: 154%;
+  color: var(--muted);
+}
+
+.page4 .marker {
+  flex: none;
+  width: calc(20 * var(--u));
+  height: 3px;
+  background: var(--yellow);
+}
+
+.page4 .title {
+  font-size: calc(40 * var(--u));
+  font-weight: 700;
+  line-height: 140%;
+}
+
+.page4 .desc {
+  flex: 0 1 calc(390 * var(--u));
+  font-size: max(14px, calc(16 * var(--u)));
+  line-height: 165%;
+  color: var(--muted);
+}
+
+.page4 .chip {
+  display: inline-block;
+  margin-top: calc(32 * var(--u));
+  padding: calc(9 * var(--u)) calc(18 * var(--u));
+  border-radius: calc(4 * var(--u));
+  background: var(--ink);
+  font-size: max(13px, calc(14 * var(--u)));
+  font-weight: 600;
+  line-height: 165%;
+  color: var(--white);
+}
+
+/* Machine cards: 3 คอลัมน์ */
+.page4 .machines {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: calc(28 * var(--u)) calc(24 * var(--u));
+  margin-top: calc(32 * var(--u));
+}
+
+.page4 .machine {
+  overflow: hidden;
+  background: var(--cream);
+  border: 1px solid #E3E4DE;
+}
+
+.page4 .machine img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.page4 .machine-details {
+  padding: calc(26 * var(--u)) calc(24 * var(--u)) calc(28 * var(--u));
+}
+
+.page4 .machine-category {
+  font-size: max(11px, calc(12 * var(--u)));
+  line-height: 150%;
+  color: var(--muted);
+}
+
+.page4 .machine-name {
+  margin-top: calc(8 * var(--u));
+  font-size: calc(24 * var(--u));
+  font-weight: 700;
+  line-height: 140%;
+}
+
+.page4 .machine-desc {
+  margin-top: calc(10 * var(--u));
+  font-size: max(13px, calc(15 * var(--u)));
+  line-height: 165%;
+  color: var(--muted);
+}
+
+.page4 .machine-fit {
+  margin-top: calc(8 * var(--u));
+  font-size: max(12px, calc(13 * var(--u)));
+  line-height: 150%;
+  color: var(--muted);
+}
+
+/* Tablet: 2 คอลัมน์ */
+@media (max-width: 1023px) {
+  .page4 {
+    padding: 64px var(--gutter) 72px;
+  }
+
+  .page4 .intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .page4 .intro-heading,
+  .page4 .label {
+    gap: 10px;
+  }
+
+  .page4 .marker {
+    width: 20px;
+  }
+
+  .page4 .title {
+    font-size: clamp(26px, 5vw, 36px);
+  }
+
+  .page4 .desc {
+    flex-basis: auto;
+    max-width: 560px;
+  }
+
+  .page4 .chip {
+    margin-top: 24px;
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
+
+  .page4 .machines {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .page4 .machine-details {
+    padding: 20px 20px 22px;
+  }
+
+  .page4 .machine-name {
+    margin-top: 4px;
+    font-size: 20px;
+  }
+
+  .page4 .machine-desc {
+    margin-top: 6px;
+  }
+
+  .page4 .machine-fit {
+    margin-top: 6px;
+  }
+}
+
+/* Mobile: 1 คอลัมน์ */
+@media (max-width: 600px) {
+  .page4 {
+    padding: 48px var(--gutter) 56px;
+  }
+
+  .page4 .machines {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

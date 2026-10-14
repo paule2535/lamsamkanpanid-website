@@ -1,0 +1,116 @@
+/* page9: แกลเลอรีผลงาน (จาก Figma ไฟล์ page9.css)
+   ทุกตัวขึ้นต้นด้วย .page9 จะได้ไม่ชนกับส่วนอื่น
+   ขนาดบนคอมใช้ --u จาก base.css
+
+   ในดีไซน์รูปวางแบบอิสระ (absolute) มีช่องว่างหลายจุด
+   ที่นี่จัดเป็น 2 คอลัมน์ ซ้ายกว้าง 744 ขวากว้าง 528 ตามสัดส่วนในดีไซน์
+   รูปแสดงเต็ม ไม่ครอป และรูปแนวตั้งในคอลัมน์ซ้ายจับคู่กันเป็นแถว */
+
+.page9 {
+  padding: calc(90 * var(--u)) calc(72 * var(--u));
+  background: #E8E3DA;
+  color: #322F29;
+}
+
+/* Service introduction */
+.page9 .intro {
+  display: flex;
+  align-items: flex-end;
+  gap: calc(64 * var(--u));
+}
+
+.page9 .title {
+  flex: 1;
+  font-size: calc(42 * var(--u));
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.page9 .intro-copy {
+  flex: 0 1 calc(400 * var(--u));
+  font-size: max(14px, calc(17 * var(--u)));
+  line-height: 165%;
+  color: #79736A;
+}
+
+/* Gallery */
+.page9 .gallery {
+  display: grid;
+  grid-template-columns: 744fr 528fr;
+  align-items: start;
+  gap: calc(24 * var(--u));
+  margin-top: calc(44 * var(--u));
+}
+
+.page9 .column {
+  display: flex;
+  flex-direction: column;
+  gap: calc(24 * var(--u));
+}
+
+.page9 .pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(24 * var(--u));
+}
+
+.page9 figure {
+  margin: 0;
+  overflow: hidden;
+  background: #D7D0C5;
+}
+
+.page9 figure img {
+  width: 100%;
+  height: auto;
+}
+
+/* Tablet: ยังเป็น 2 คอลัมน์ แต่ระยะคงที่ */
+@media (max-width: 1023px) {
+  .page9 {
+    padding: 64px var(--gutter);
+  }
+
+  .page9 .intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .page9 .title {
+    font-size: clamp(26px, 5vw, 36px);
+  }
+
+  .page9 .intro-copy {
+    flex-basis: auto;
+    max-width: 560px;
+  }
+
+  .page9 .gallery {
+    gap: 14px;
+    margin-top: 32px;
+  }
+
+  .page9 .column,
+  .page9 .pair {
+    gap: 14px;
+  }
+}
+
+/* Mobile: คอลัมน์เดียว (คู่รูปแนวตั้งยังวางข้างกัน) */
+@media (max-width: 600px) {
+  .page9 {
+    padding: 48px var(--gutter);
+  }
+
+  .page9 .gallery {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .page9 .column,
+  .page9 .pair {
+    gap: 10px;
+  }
+}

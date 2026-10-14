@@ -1,0 +1,139 @@
+/* ปุ่มติดต่อลอย: โทรศัพท์ + LINE อยู่กลางขอบขวาของจอ เลื่อนตามตอน scroll
+   ทุกตัวขึ้นต้นด้วย .float- จะได้ไม่ชนกับส่วนอื่น */
+
+.float-contact {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transform: translateY(-50%);
+}
+
+.float-btn {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.float-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.32);
+}
+
+.float-btn:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+.float-btn-phone {
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+.float-btn-phone svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.float-btn-line {
+  background: #06C755;
+}
+
+.float-btn-line svg {
+  width: 38px;
+  height: 38px;
+}
+
+/* เมนูเบอร์โทร: เปิดทางซ้ายของปุ่มโทร */
+.float-phone {
+  position: relative;
+}
+
+.float-menu {
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 12px);
+  width: max-content;
+  padding: 6px;
+  border-radius: 12px;
+  background: var(--white);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+  transform: translateY(-50%);
+}
+
+.float-menu a {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: var(--ink);
+}
+
+.float-menu a:hover,
+.float-menu a:focus-visible {
+  background: var(--cream);
+  outline: none;
+}
+
+.float-menu span {
+  font-size: 12px;
+  line-height: 150%;
+  color: var(--muted);
+}
+
+.float-menu strong {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 140%;
+}
+
+@media (max-width: 600px) {
+  .float-contact {
+    right: 12px;
+    gap: 10px;
+  }
+
+  .float-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .float-btn-phone svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .float-btn-line svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .float-menu {
+    right: calc(100% + 10px);
+  }
+
+  .float-menu strong {
+    font-size: 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-btn {
+    transition: none;
+  }
+}

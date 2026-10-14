@@ -1,0 +1,207 @@
+/* page6: Photographic hero (จาก Figma ไฟล์ page6.css)
+   ทุกตัวขึ้นต้นด้วย .page6 จะได้ไม่ชนกับส่วนอื่น
+   บนคอมวางตำแหน่งตามดีไซน์ 1440 × 900 ด้วย --u จาก base.css */
+
+.page6 {
+  position: relative;
+  isolation: isolate;
+  height: calc(900 * var(--u));
+  overflow: hidden;
+  background: #343A33;
+  color: #F8F4EC;
+}
+
+.page6 .bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+}
+
+/* ไล่สีเข้มบางๆ ด้านซ้าย ภาพยังสว่างเหมือนดีไซน์ แต่หัวข้อสีครีมอ่านออก */
+.page6::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(24, 20, 15, 0.4) 0%, rgba(24, 20, 15, 0.12) 45%, rgba(24, 20, 15, 0) 65%);
+}
+
+/* Hero message */
+.page6 .message {
+  position: absolute;
+  top: calc(110 * var(--u));
+  left: calc(40 * var(--u));
+  display: flex;
+  flex-direction: column;
+  gap: calc(18 * var(--u));
+  width: calc(800 * var(--u));
+}
+
+.page6 .summary {
+  font-size: max(13px, calc(15 * var(--u)));
+  line-height: 153%;
+}
+
+.page6 .title {
+  font-size: calc(64 * var(--u));
+  font-weight: 400;
+  line-height: 135%;
+}
+
+/* จุดบนภาพ: อยู่เหนือเส้น ปลายเส้นจะได้ซ่อนใต้วงกลม */
+.page6 .dot {
+  position: absolute;
+  z-index: 1;
+  width: calc(22 * var(--u));
+  height: calc(22 * var(--u));
+  border: 1px solid #D8DCD3;
+  border-radius: 50%;
+  background: #F5EFE4;
+}
+
+/* อยู่ที่ปลายบนของเส้นตัว L (ตรงกรอบหน้าต่างหน้าจั่ว) */
+.page6 .dot-1 {
+  top: calc(187 * var(--u));
+  left: calc(616 * var(--u));
+}
+
+.page6 .dot-2 {
+  top: calc(433 * var(--u));
+  left: calc(863 * var(--u));
+}
+
+/* เส้นโยงไปที่การ์ด (ตำแหน่งวัดจากรูปดีไซน์) */
+.page6 .line {
+  position: absolute;
+  border-color: #F8F4EC;
+  border-style: solid;
+  border-width: 0;
+}
+
+/* เส้นซ้าย: รูปตัว L จากขอบบนการ์ด "เพิ่มแสงให้บ้าน" ขึ้นไปชนกรอบหน้าต่างหน้าจั่ว */
+.page6 .line-1 {
+  top: calc(197 * var(--u));
+  left: calc(569 * var(--u));
+  width: calc(58 * var(--u));
+  height: calc(206 * var(--u));
+  border-top-width: max(1px, calc(2 * var(--u)));
+  border-left-width: max(1px, calc(2 * var(--u)));
+}
+
+/* เส้นขวา: จากจุดวงกลมที่ประตูกระจก ไปถึงการ์ดด้านขวา */
+.page6 .line-2 {
+  top: calc(445 * var(--u));
+  left: calc(899 * var(--u));
+  width: calc(181 * var(--u));
+  border-top-width: max(1px, calc(2 * var(--u)));
+}
+
+/* Photo annotation */
+.page6 .note {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: calc(12 * var(--u));
+  width: calc(275 * var(--u));
+  padding: calc(18 * var(--u));
+  border-radius: calc(12 * var(--u));
+  background: rgba(248, 244, 236, 0.92);
+}
+
+.page6 .note-1 {
+  top: calc(403 * var(--u));
+  left: calc(393 * var(--u));
+}
+
+.page6 .note-2 {
+  top: calc(410 * var(--u));
+  left: calc(1080 * var(--u));
+}
+
+.page6 .note-label {
+  display: flex;
+  align-items: center;
+  gap: calc(10 * var(--u));
+  font-size: max(12px, calc(13 * var(--u)));
+  line-height: 165%;
+  color: #322F29;
+}
+
+.page6 .note-marker {
+  flex: none;
+  width: calc(6 * var(--u));
+  height: calc(6 * var(--u));
+  border-radius: 50%;
+  background: #956347;
+}
+
+.page6 .note-copy {
+  font-size: max(13px, calc(14 * var(--u)));
+  line-height: 165%;
+  color: #79736A;
+}
+
+/* Tablet + mobile: หัวข้ออยู่บน การ์ดอยู่ล่าง เรียงตามปกติ ไม่มีจุด */
+@media (max-width: 1023px) {
+  .page6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 14px;
+    height: auto;
+    min-height: 640px;
+    padding: 56px var(--gutter) 40px;
+  }
+
+  .page6::after {
+    background: linear-gradient(180deg, rgba(24, 20, 15, 0.65) 0%, rgba(24, 20, 15, 0.25) 45%, rgba(24, 20, 15, 0.55) 100%);
+  }
+
+  .page6 .message {
+    position: static;
+    gap: 12px;
+    width: auto;
+    margin-bottom: auto;
+  }
+
+  .page6 .title {
+    font-size: clamp(30px, 6vw, 48px);
+  }
+
+  .page6 .dot,
+  .page6 .line {
+    display: none;
+  }
+
+  .page6 .note {
+    position: static;
+    gap: 8px;
+    width: min(100%, 340px);
+    padding: 14px 16px;
+    border-radius: 10px;
+  }
+
+  .page6 .note-label {
+    gap: 10px;
+  }
+
+  .page6 .note-marker {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page6 {
+    min-height: 600px;
+    padding: 44px var(--gutter) 32px;
+  }
+
+  .page6 .bg {
+    object-position: center;
+  }
+}

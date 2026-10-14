@@ -1,0 +1,60 @@
+/* ใช้ร่วมกันทุกส่วน: สี ฟอนต์ ระยะขอบ */
+:root {
+  --ink: #202321;
+  --muted: #6A706A;
+  --hero-bg: #202522;
+  --cream: #F5F3ED;
+  --yellow: #F3C744;
+  --white: #FFFFFF;
+  --gutter: 64px;
+
+  /* บนคอม ทุกขนาดเขียนเป็น "จำนวน px ในดีไซน์ × --u"
+     --u คือ 1px ของดีไซน์กว้าง 1440px ที่ย่อ/ขยายตามจอ สัดส่วนจึงเหมือน Figma ทุกความกว้าง
+     (ขยายได้สูงสุดเท่าจอ 1920px) */
+  --u: min(100vw / 1440, 1.3333px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans Thai', system-ui, sans-serif;
+  background: var(--hero-bg);
+  color: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg {
+  display: block;
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  :root {
+    --gutter: 32px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  :root {
+    --gutter: 20px;
+  }
+}

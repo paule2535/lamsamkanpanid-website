@@ -1,0 +1,147 @@
+/* page8: Design to build process (จาก Figma ไฟล์ page8.css)
+   ทุกตัวขึ้นต้นด้วย .page8 จะได้ไม่ชนกับส่วนอื่น
+   ขนาดบนคอมใช้ --u จาก base.css */
+
+.page8 {
+  display: flex;
+  flex-direction: column;
+  gap: calc(50 * var(--u));
+  padding: calc(90 * var(--u)) calc(72 * var(--u));
+  background: #343A33;
+  color: #F8F4EC;
+}
+
+/* Process introduction: หัวข้อซ้าย คำอธิบายขวา ชิดล่างเท่ากัน */
+.page8 .intro {
+  display: flex;
+  align-items: flex-end;
+  gap: calc(80 * var(--u));
+}
+
+.page8 .intro-heading {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: calc(18 * var(--u));
+}
+
+.page8 .label {
+  font-size: max(12px, calc(13 * var(--u)));
+  font-weight: 500;
+  line-height: 154%;
+  color: #C6CABC;
+}
+
+.page8 .title {
+  font-size: calc(42 * var(--u));
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.page8 .intro-copy {
+  flex: 0 1 calc(420 * var(--u));
+  font-size: max(14px, calc(17 * var(--u)));
+  line-height: 165%;
+  color: #C6CABC;
+}
+
+/* Process steps: 4 คอลัมน์ มีเส้นด้านบน */
+.page8 .steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: calc(32 * var(--u));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page8 .step {
+  display: flex;
+  flex-direction: column;
+  gap: calc(18 * var(--u));
+  padding-top: calc(22 * var(--u));
+  border-top: 1px solid #6A7065;
+}
+
+.page8 .step-no {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: calc(36 * var(--u));
+  font-weight: 300;
+  line-height: 122%;
+  color: #C6CABC;
+}
+
+.page8 .step-title {
+  font-size: calc(23 * var(--u));
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.page8 .step-copy {
+  font-size: max(13px, calc(15 * var(--u)));
+  line-height: 165%;
+  color: #C6CABC;
+}
+
+.page8 .note {
+  font-size: max(12px, calc(12 * var(--u)));
+  line-height: 165%;
+  color: #C6CABC;
+}
+
+/* Tablet: 2 × 2 */
+@media (max-width: 1023px) {
+  .page8 {
+    gap: 36px;
+    padding: 64px var(--gutter);
+  }
+
+  .page8 .intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .page8 .intro-heading {
+    gap: 10px;
+  }
+
+  .page8 .title {
+    font-size: clamp(26px, 5vw, 36px);
+  }
+
+  .page8 .intro-copy {
+    flex-basis: auto;
+    max-width: 560px;
+  }
+
+  .page8 .steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 24px;
+  }
+
+  .page8 .step {
+    gap: 10px;
+    padding-top: 18px;
+  }
+
+  .page8 .step-no {
+    font-size: 30px;
+  }
+
+  .page8 .step-title {
+    font-size: 20px;
+  }
+}
+
+/* Mobile: ทีละขั้น */
+@media (max-width: 600px) {
+  .page8 {
+    padding: 48px var(--gutter);
+  }
+
+  .page8 .steps {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

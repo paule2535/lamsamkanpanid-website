@@ -1,0 +1,159 @@
+/* page7: Three construction services (จาก Figma ไฟล์ page7.css)
+   ทุกตัวขึ้นต้นด้วย .page7 จะได้ไม่ชนกับส่วนอื่น
+   ขนาดบนคอมใช้ --u จาก base.css */
+
+.page7 {
+  padding: calc(90 * var(--u)) calc(72 * var(--u));
+  background: #E8E3DA;
+  color: #322F29;
+}
+
+/* Service introduction: หัวข้อซ้าย คำอธิบายขวา ชิดล่างเท่ากัน */
+.page7 .intro {
+  display: flex;
+  align-items: flex-end;
+  gap: calc(64 * var(--u));
+}
+
+.page7 .title {
+  flex: 0 0 calc(832 * var(--u));
+  font-size: calc(42 * var(--u));
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.page7 .intro-copy {
+  flex: 0 1 calc(400 * var(--u));
+  font-size: max(14px, calc(17 * var(--u)));
+  line-height: 165%;
+  color: #79736A;
+}
+
+/* Service categories: ใบซ้ายแคบ (รูปแนวตั้ง) ใบขวากว้าง */
+.page7 .services {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(28 * var(--u));
+  margin-top: calc(44 * var(--u));
+}
+
+.page7 .service {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: calc(18 * var(--u));
+}
+
+.page7 .service-wide {
+  flex: 0 0 calc(822 * var(--u));
+}
+
+/* ในดีไซน์รูปซ้ายกว้าง 412 จากคอลัมน์ 446 เส้นใต้ข้อความจึงยาวเลยรูปออกไป */
+.page7 .service img {
+  width: calc(412 / 446 * 100%);
+  height: auto;
+  aspect-ratio: 412 / 632;
+  object-fit: cover;
+}
+
+.page7 .service-wide img {
+  width: 100%;
+  aspect-ratio: 816 / 511;
+}
+
+.page7 .service-label {
+  font-size: max(12px, calc(13 * var(--u)));
+  font-weight: 500;
+  line-height: 154%;
+  color: #956347;
+}
+
+.page7 .service-title {
+  font-size: calc(28 * var(--u));
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.page7 .service-copy {
+  font-size: max(14px, calc(16 * var(--u)));
+  line-height: 165%;
+}
+
+.page7 .service-scope {
+  padding-top: calc(16 * var(--u));
+  border-top: 1px solid #D7D0C5;
+  font-size: max(12px, calc(12 * var(--u)));
+  line-height: 165%;
+  color: #79736A;
+}
+
+/* Tablet: ยังวาง 2 ใบคู่กัน แต่ใช้ขนาดคงที่ */
+@media (max-width: 1023px) {
+  .page7 {
+    padding: 64px var(--gutter);
+  }
+
+  .page7 .intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .page7 .title {
+    flex-basis: auto;
+    font-size: clamp(26px, 5vw, 36px);
+  }
+
+  .page7 .intro-copy {
+    flex-basis: auto;
+    max-width: 560px;
+  }
+
+  .page7 .services {
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  .page7 .service {
+    gap: 12px;
+  }
+
+  .page7 .service-wide {
+    flex: 1.6;
+  }
+
+  .page7 .service-title {
+    font-size: 22px;
+  }
+
+  .page7 .service-scope {
+    padding-top: 12px;
+  }
+}
+
+/* Mobile: เรียงลงมาทีละใบ */
+@media (max-width: 600px) {
+  .page7 {
+    padding: 48px var(--gutter);
+  }
+
+  .page7 .services {
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .page7 .service,
+  .page7 .service-wide {
+    flex: none;
+    width: 100%;
+  }
+
+  .page7 .service img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+  }
+
+  .page7 .service-wide img {
+    aspect-ratio: 16 / 10;
+  }
+}

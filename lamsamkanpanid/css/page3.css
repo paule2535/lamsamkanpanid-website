@@ -1,0 +1,145 @@
+/* page3: Service overview (จาก Figma ไฟล์ page3.css)
+   ทุกตัวขึ้นต้นด้วย .page3 จะได้ไม่ชนกับส่วนอื่น
+   ขนาดบนคอมใช้ --u จาก base.css */
+
+.page3 {
+  display: flex;
+  flex-direction: column;
+  gap: calc(32 * var(--u));
+  padding: calc(72 * var(--u)) calc(64 * var(--u));
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.page3 .card {
+  display: flex;
+  flex-direction: column;
+  gap: calc(18 * var(--u));
+  padding: calc(32 * var(--u));
+  background: var(--white);
+  border: max(3px, calc(5 * var(--u))) solid var(--ink);
+}
+
+.page3 .card-title {
+  font-size: calc(28 * var(--u));
+  font-weight: 700;
+  line-height: 140%;
+}
+
+/* รายการแบบมีจุดนำหน้า (การ์ดที่ 1 และ 3) */
+.page3 .card-list {
+  margin: 0;
+  padding: 0 0 0 calc(14 * var(--u));
+  list-style: none;
+  font-size: calc(24 * var(--u));
+  line-height: 165%;
+}
+
+.page3 .card-list li {
+  position: relative;
+  padding-left: calc(23 * var(--u));
+}
+
+.page3 .card-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+}
+
+/* การ์ดที่ 2: โลโก้มาตรฐาน 4 อันเรียงแถว (รูปตัดมาจากภาพหน้าจอ Figma) */
+.page3 .gallery {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: calc(24 * var(--u));
+  margin: calc(15 * var(--u)) 0 calc(33 * var(--u));
+}
+
+.page3 .gallery img {
+  width: auto;
+  height: calc(145 * var(--u));
+}
+
+/* การ์ดที่ 3: รายการ 2 คอลัมน์ คอลัมน์ขวาเริ่มที่ 649 จากขอบการ์ดตามดีไซน์
+   (คอลัมน์ซ้ายกว้างขึ้นได้ถ้าข้อความยาวกว่า จะได้ไม่ตกบรรทัด) */
+.page3 .columns {
+  display: grid;
+  grid-template-columns: minmax(calc(551 * var(--u)), max-content) 1fr;
+  gap: calc(66 * var(--u));
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .page3 {
+    gap: 20px;
+    padding: 56px var(--gutter);
+  }
+
+  .page3 .card {
+    gap: 14px;
+    padding: 24px;
+    border-width: 4px;
+  }
+
+  .page3 .card-title {
+    font-size: 22px;
+  }
+
+  .page3 .card-list {
+    font-size: 17px;
+  }
+
+  .page3 .card-list {
+    padding-left: 4px;
+  }
+
+  .page3 .card-list li {
+    padding-left: 20px;
+  }
+
+  .page3 .gallery {
+    justify-content: space-between;
+    gap: 16px;
+    margin: 8px 0 4px;
+  }
+
+  .page3 .gallery img {
+    height: 96px;
+  }
+
+  .page3 .columns {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .page3 {
+    padding: 48px var(--gutter);
+  }
+
+  .page3 .card {
+    padding: 20px;
+  }
+
+  .page3 .card-title {
+    font-size: 20px;
+  }
+
+  .page3 .card-list {
+    font-size: 16px;
+  }
+
+  /* มือถือ: 2 × 2 */
+  .page3 .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 20px 12px;
+  }
+
+  .page3 .gallery img {
+    height: 88px;
+  }
+}

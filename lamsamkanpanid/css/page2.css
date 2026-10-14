@@ -1,0 +1,201 @@
+/* page2: Project showcase (จาก Figma ไฟล์ page2.css)
+   ทุกตัวขึ้นต้นด้วย .page2 จะได้ไม่ชนกับส่วนอื่น
+   ขนาดบนคอมใช้ --u จาก base.css */
+
+.page2 {
+  padding: calc(80 * var(--u)) calc(64 * var(--u)) calc(98 * var(--u));
+  background: #EAECE4;
+  color: var(--ink);
+}
+
+/* Section introduction */
+.page2 .intro {
+  display: flex;
+  align-items: flex-end;
+  gap: calc(64 * var(--u));
+}
+
+.page2 .intro-heading {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(12 * var(--u));
+}
+
+.page2 .label {
+  display: flex;
+  align-items: center;
+  gap: calc(10 * var(--u));
+  font-size: max(12px, calc(13 * var(--u)));
+  font-weight: 600;
+  line-height: 154%;
+  color: var(--muted);
+}
+
+.page2 .marker {
+  flex: none;
+  width: calc(20 * var(--u));
+  height: 3px;
+  background: var(--yellow);
+}
+
+.page2 .title {
+  font-size: calc(40 * var(--u));
+  font-weight: 700;
+  line-height: 140%;
+}
+
+.page2 .desc {
+  flex: 0 1 calc(450 * var(--u));
+  font-size: max(14px, calc(16 * var(--u)));
+  line-height: 165%;
+  color: var(--muted);
+}
+
+/* Project examples: แถวบน 3 ใบ แถวล่าง 2 ใบ (ใหญ่กว่า) จัดกึ่งกลาง */
+.page2 .projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: calc(45 * var(--u)) calc(24 * var(--u));
+  margin-top: calc(36 * var(--u));
+}
+
+.page2 .project {
+  display: flex;
+  flex-direction: column;
+  gap: calc(18 * var(--u));
+  width: calc((100% - 48 * var(--u)) / 3);
+}
+
+.page2 .project:nth-child(n + 4) {
+  width: calc(496 * var(--u));
+  margin: 0 calc(8 * var(--u));
+}
+
+.page2 .project-image {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: #D8DCD3;
+}
+
+.page2 .project:nth-child(n + 4) .project-image {
+  aspect-ratio: 7 / 4;
+}
+
+.page2 .project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page2 .badge {
+  position: absolute;
+  left: calc(16 * var(--u));
+  bottom: calc(16 * var(--u));
+  padding: calc(6 * var(--u)) calc(12 * var(--u));
+  background: var(--cream);
+  font-size: max(11px, calc(12 * var(--u)));
+  line-height: 150%;
+}
+
+.page2 .project-details {
+  display: flex;
+  flex-direction: column;
+  gap: calc(8 * var(--u));
+}
+
+.page2 .project-title {
+  font-size: calc(24 * var(--u));
+  font-weight: 700;
+  line-height: 140%;
+}
+
+.page2 .project-desc {
+  font-size: max(13px, calc(15 * var(--u)));
+  line-height: 165%;
+  color: var(--muted);
+}
+
+/* Tablet: 2 คอลัมน์ */
+@media (max-width: 1023px) {
+  .page2 {
+    padding: 64px var(--gutter) 72px;
+  }
+
+  .page2 .intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .page2 .intro-heading {
+    gap: 10px;
+  }
+
+  .page2 .label {
+    gap: 10px;
+  }
+
+  .page2 .marker {
+    width: 20px;
+  }
+
+  .page2 .title {
+    font-size: clamp(26px, 5vw, 36px);
+  }
+
+  .page2 .desc {
+    flex-basis: auto;
+    max-width: 560px;
+  }
+
+  .page2 .projects {
+    gap: 36px 24px;
+    margin-top: 36px;
+  }
+
+  .page2 .project,
+  .page2 .project:nth-child(n + 4) {
+    gap: 14px;
+    width: calc((100% - 24px) / 2);
+    margin: 0;
+  }
+
+  .page2 .project:nth-child(n + 4) .project-image {
+    aspect-ratio: 3 / 2;
+  }
+
+  .page2 .badge {
+    left: 12px;
+    bottom: 12px;
+    padding: 4px 10px;
+  }
+
+  .page2 .project-details {
+    gap: 6px;
+  }
+
+  .page2 .project-title {
+    font-size: 20px;
+  }
+}
+
+/* Mobile: 1 คอลัมน์ */
+@media (max-width: 600px) {
+  .page2 {
+    padding: 48px var(--gutter) 56px;
+  }
+
+  .page2 .projects {
+    gap: 32px;
+    margin-top: 28px;
+  }
+
+  .page2 .project,
+  .page2 .project:nth-child(n + 4) {
+    width: 100%;
+  }
+}
