@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lamsamkanpanid-website-jggk.vercel.app/sitemap.xml
